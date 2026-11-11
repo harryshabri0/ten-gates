@@ -137,6 +137,7 @@ func _ready() -> void:
 	_hud.settings_requested.connect(_on_settings_requested)
 	_hud.world_action_requested.connect(_on_world_action_requested)
 	_hud.update_requested.connect(UpdateService.open_download)
+	_hud.camera_zoom_requested.connect(_on_camera_zoom_requested)
 	UpdateService.update_available.connect(_on_update_available)
 	_spell_system.targeting_requested.connect(_hud.set_spell_targeting)
 	_spell_system.cooldown_changed.connect(_hud.set_spell_cooldown)
@@ -187,16 +188,20 @@ func _tick_simulation(delta: float) -> void:
 		_hud.set_hint("Stress test complete. Record the FPS and draw calls on your Android device.")
 
 func _on_screen_tapped(position: Vector2) -> void:
-	if _spell_system.confirm_target(position):
+	var world_position: Vector2 = get_viewport().get_canvas_transform().affine_inverse() * position
+	if _spell_system.confirm_target(world_position):
 		return
 	if _stress_test_running:
 		return
 	for index: int in _slot_positions.size():
-		if position.distance_squared_to(_slot_positions[index]) > SLOT_RADIUS * SLOT_RADIUS:
+		if world_position.distance_squared_to(_slot_positions[index]) > SLOT_RADIUS * SLOT_RADIUS:
 			continue
 		_select_slot(index)
 		return
 	_clear_selection()
+
+func _on_camera_zoom_requested(factor: float) -> void:
+	EventBus.pinch_zoom_requested.emit(factor)
 
 func _select_slot(index: int) -> void:
 	_clear_selected_tower_only()

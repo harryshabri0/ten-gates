@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://scripts/core/input_controller.gd" id="1_input"]
 [ext_resource type="PackedScene" path="res://scenes/ui/debug_overlay.tscn" id="2_debug"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/gameplay/spell_system.gd" id="10_spell"]
 [ext_resource type="PackedScene" path="res://scenes/ui/feedback_layer.tscn" id="11_feedback"]
 [ext_resource type="Script" path="res://scripts/gameplay/world_rule_controller.gd" id="12_rules"]
+[ext_resource type="Script" path="res://scripts/gameplay/camera_controller.gd" id="13_camera"]
 
 [node name="GameRoot" type="Node2D"]
 script = ExtResource("3_controller")
@@ -25,6 +26,12 @@ show_behind_parent = true
 
 [node name="InputController" type="Node" parent="."]
 script = ExtResource("1_input")
+
+[node name="GameplayCamera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("13_camera")
 
 [node name="EnemyManager" type="Node2D" parent="."]
 script = ExtResource("4_enemy")

@@ -21,6 +21,7 @@ signal auto_next_requested(enabled: bool)
 signal settings_requested()
 signal world_action_requested()
 signal update_requested()
+signal camera_zoom_requested(factor: float)
 
 @onready var _status: Label = $TopBar/Status
 @onready var _hint: Label = $BottomBar/Hint
@@ -30,6 +31,8 @@ signal update_requested()
 var _auto_next_enabled: bool = false
 var _sell_hold_timer: Timer
 var _update_button: Button
+var _zoom_in_button: Button
+var _zoom_out_button: Button
 
 func _ready() -> void:
 	for tower_id: String in ["archer", "cannon", "barracks", "ice", "arcane", "poison_lab", "tesla", "skyfang", "coin_tower", "ballista", "fire_tower", "mechanic_workshop", "war_totem", "void_tower"]:
@@ -51,6 +54,10 @@ func _ready() -> void:
 	_update_button.hide()
 	add_child(_update_button)
 	_update_button.pressed.connect(func() -> void: update_requested.emit())
+	_zoom_in_button = _create_map_button("ZoomIn", "+", Vector2(52.0, 705.0))
+	_zoom_out_button = _create_map_button("ZoomOut", "−", Vector2(52.0, 805.0))
+	_zoom_in_button.pressed.connect(func() -> void: camera_zoom_requested.emit(1.18))
+	_zoom_out_button.pressed.connect(func() -> void: camera_zoom_requested.emit(0.84))
 	$SpellPanel/Spell1.pressed.connect(func() -> void: spell_requested.emit(String($SpellPanel/Spell1.get_meta("spell_id"))))
 	$SpellPanel/Spell2.pressed.connect(func() -> void: spell_requested.emit(String($SpellPanel/Spell2.get_meta("spell_id"))))
 	$SpellPanel/Spell3.pressed.connect(func() -> void: spell_requested.emit(String($SpellPanel/Spell3.get_meta("spell_id"))))
@@ -79,6 +86,7 @@ func _ready() -> void:
 	$ResultPanel.hide()
 	$DefeatPanel.hide()
 	$WorldAction.hide()
+	_apply_touch_sizes()
 	set_hint("Tap an empty build slot, then choose a tower.")
 
 func set_status(base_hp: int, gold: int, wave: int, speed: int) -> void:
@@ -92,6 +100,28 @@ func show_update_available(version: String) -> void:
 	_update_button.tooltip_text = "Download the latest Ten Gates APK"
 	_update_button.show()
 
+func _create_map_button(button_name: String, label: String, location: Vector2) -> Button:
+	var button := Button.new()
+	button.name = button_name
+	button.text = label
+	button.position = location
+	button.size = Vector2(86.0, 86.0)
+	button.add_theme_font_size_override("font_size", 40)
+	button.tooltip_text = "Zoom map"
+	add_child(button)
+	return button
+
+func _apply_touch_sizes(menu_scale: float = 1.10) -> void:
+	for control: Node in get_children():
+		_apply_button_font_size(control, menu_scale)
+
+func _apply_button_font_size(node: Node, menu_scale: float) -> void:
+	if node is Button:
+		var is_zoom_button := node == _zoom_in_button or node == _zoom_out_button
+		node.add_theme_font_size_override("font_size", 40 if is_zoom_button else roundi(21.0 * menu_scale))
+	for child: Node in node.get_children():
+		_apply_button_font_size(child, menu_scale)
+
 func set_difficulty_label(difficulty_id: String) -> void:
 	$TopBar/Mode.text = difficulty_id.capitalize()
 
@@ -103,9 +133,11 @@ func set_paused(value: bool) -> void:
 
 func apply_preferences() -> void:
 	$SpellPanel.position.x = 50.0 if Settings.left_handed else 1550.0
-	$TopBar/Status.add_theme_font_size_override("font_size", roundi(22.0 * Settings.font_scale))
-	$BottomBar/Hint.add_theme_font_size_override("font_size", roundi(18.0 * Settings.font_scale))
-	$WavePreview.add_theme_font_size_override("font_size", roundi(18.0 * Settings.font_scale))
+	var menu_scale := maxf(1.10, Settings.font_scale)
+	$TopBar/Status.add_theme_font_size_override("font_size", roundi(26.0 * menu_scale))
+	$BottomBar/Hint.add_theme_font_size_override("font_size", roundi(22.0 * menu_scale))
+	$WavePreview.add_theme_font_size_override("font_size", roundi(21.0 * menu_scale))
+	_apply_touch_sizes(menu_scale)
 	$TopBar.modulate = Color(1.0, 0.94, 0.66) if Settings.colorblind_mode else Color.WHITE
 
 func show_result(stars: int, gained_sp: int, total_sp: int) -> void:
