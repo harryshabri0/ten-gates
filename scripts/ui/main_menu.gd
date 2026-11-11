@@ -34,7 +34,7 @@ func _build_interface() -> void:
 	var spacer := Control.new()
 	spacer.custom_minimum_size.y = 30
 	layout.add_child(spacer)
-	layout.add_child(_button("PLAY", _play, Color("3e8b67")))
+	layout.add_child(_button("PLAY CAMPAIGN", _play, Color("3e8b67")))
 	layout.add_child(_button("PLAYER STATS", _toggle_stats, Color("315a88")))
 	layout.add_child(_button("QUIT", _quit, Color("593d52")))
 	var note := Label.new()
@@ -69,17 +69,23 @@ func _button(caption: String, action: Callable, color: Color) -> Button:
 	button.add_theme_color_override("font_color", Color.WHITE)
 	var normal := StyleBoxFlat.new()
 	normal.bg_color = color
+	normal.border_color = Color("e7c869")
+	normal.set_border_width_all(3)
 	normal.corner_radius_top_left = 16
 	normal.corner_radius_top_right = 16
 	normal.corner_radius_bottom_left = 16
 	normal.corner_radius_bottom_right = 16
 	button.add_theme_stylebox_override("normal", normal)
+	var hover := normal.duplicate()
+	hover.bg_color = color.lightened(0.14)
+	hover.border_color = Color("fff2bb")
+	button.add_theme_stylebox_override("hover", hover)
 	button.pressed.connect(func() -> void: AudioDirector.play_ui(); action.call())
 	return button
 
 func _play() -> void:
 	PlayerStats.flush()
-	get_tree().change_scene_to_file("res://scenes/game/game_root.tscn")
+	get_tree().change_scene_to_file("res://scenes/meta/map_select.tscn")
 
 func _toggle_stats() -> void:
 	_stats_panel.visible = not _stats_panel.visible

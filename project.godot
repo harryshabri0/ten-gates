@@ -5,7 +5,7 @@ config_version=5
 [application]
 
 config/name="Ten Gates"
-config/version="1.0.1"
+config/version="1.0.2"
 config/icon="res://assets/release/ten_gates_icon.png"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")

@@ -82,7 +82,9 @@ func _ready() -> void:
 	_boss_controller.telegraph_started.connect(_on_boss_telegraph)
 	_spell_system.bind(_enemy_manager, _status_system)
 	var active_run: Dictionary = SaveManager.get_active_run()
-	var level_id: String = String(active_run.get("level_id", "1-1"))
+	var session: Dictionary = SaveManager.get_section("session")
+	var selected_level_id: String = String(session.get("selected_level_id", "1-1"))
+	var level_id: String = String(active_run.get("level_id", selected_level_id))
 	var level: Dictionary = _wave_director.load_level_id(level_id, _enemy_manager)
 	_current_level = level
 	_apply_level_layout(level)

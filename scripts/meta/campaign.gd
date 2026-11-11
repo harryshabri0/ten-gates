@@ -68,6 +68,15 @@ func is_world_unlocked(world: int) -> bool:
 	var boss: Dictionary = Dictionary(_levels.get(_level_key(world - 1, LEVELS_PER_WORLD), {}))
 	return bool(boss.get("boss_defeated", false)) and get_world_stars(world - 1) >= STARS_TO_UNLOCK_NEXT_WORLD
 
+func is_map_unlocked(map_number: int) -> bool:
+	## Main-menu progression uses one featured map from each world. A player only
+	## needs to complete the immediately previous featured map to open the next.
+	if map_number < 1 or map_number > WORLD_COUNT:
+		return false
+	if map_number == 1:
+		return true
+	return get_level_stars(map_number - 1, 1) > 0
+
 func highest_completed_world() -> int:
 	var completed: int = 0
 	for world: int in WORLD_COUNT:
