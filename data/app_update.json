@@ -1,5 +1,5 @@
 {
-  "enabled": false,
-  "github_repo": "",
+  "enabled": true,
+  "github_repo": "harryshabri0/ten-gates",
   "apk_asset_name": "TenGates.apk"
 }
