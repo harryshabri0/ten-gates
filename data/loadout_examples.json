@@ -1,0 +1,5 @@
+{
+  "world4_default":{"world":4,"max_towers":6,"available":["archer","cannon","barracks","ice","arcane"],"selected":["archer","cannon","barracks","ice","arcane"]},
+  "borrowed_tower_example":{"level_id":"4-3","mandatory_borrowed":["skyfang"],"max_towers":6}
+}
+

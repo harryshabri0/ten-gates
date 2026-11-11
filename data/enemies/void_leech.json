@@ -1,0 +1,1 @@
+{"id":"void_leech","name":"Void Leech","world":9,"hp":160.0,"speed":70.0,"armor":4,"physical_resist":0.0,"magic_resist":0.30,"flying":false,"stealth":false,"bounty":38,"leak_weight":1,"radius":17.0,"color":"#a15dad","abilities":[{"id":"leech_buff","interval":6.0,"duration":6.0}]}

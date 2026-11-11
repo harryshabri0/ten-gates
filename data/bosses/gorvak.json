@@ -1,0 +1,14 @@
+{
+  "id":"gorvak","name":"Gorvak, Raja Troll","kind":"boss","world":1,
+  "hp":2600.0,"speed":34.0,"armor":20,"physical_resist":0.18,"magic_resist":0.10,"flying":false,"stealth":false,
+  "bounty":400,"leak_weight":10,"radius":48.0,"color":"#6c9b55","abilities":[],
+  "phases":[
+    {"threshold":1.0,"abilities":[{"id":"regen_if_idle","idle_seconds":3.0,"percent_per_second":0.02}]},
+    {"threshold":0.66,"abilities":[{"id":"rock_throw","interval":8.0,"telegraph_seconds":1.5,"tower_disable_seconds":10.0,"radius":95.0}]},
+    {"threshold":0.33,"abilities":[{"id":"roar","interval":10.0,"telegraph_seconds":1.2,"count":10,"enemy":"grunt","speed_multiplier":1.20}]},
+    {"threshold":0.15,"hard_only":true,"abilities":[{"id":"hard_enrage","speed_multiplier":1.25}]}
+  ],
+  "sub_targets":[],
+  "map_objects":[]
+}
+

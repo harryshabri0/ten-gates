@@ -1,0 +1,17 @@
+{
+  "id": "runner",
+  "name": "Goblin Runner",
+  "hp": 38.0,
+  "speed": 138.0,
+  "armor": 0,
+  "physical_resist": 0.0,
+  "magic_resist": 0.0,
+  "flying": false,
+  "stealth": false,
+  "bounty": 8,
+  "leak_weight": 1,
+  "radius": 12.0,
+  "color": "#7db0ea",
+  "abilities": []
+}
+

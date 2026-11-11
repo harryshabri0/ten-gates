@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/meta/skill_tree_screen.gd" id="1_screen"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_screen")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.035, 0.055, 0.09, 1)
+mouse_filter = 2
+
+[node name="Layout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 28.0
+offset_right = -34.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TopBar" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Layout/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Skill Tree"
+
+[node name="Points" type="Label" parent="Layout/TopBar"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="Respec" type="Button" parent="Layout/TopBar"]
+layout_mode = 2
+text = "Free Respec"
+
+[node name="Preset1" type="Button" parent="Layout/TopBar"]
+layout_mode = 2
+text = "Preset 1"
+
+[node name="Preset2" type="Button" parent="Layout/TopBar"]
+layout_mode = 2
+text = "Preset 2"
+
+[node name="Preset3" type="Button" parent="Layout/TopBar"]
+layout_mode = 2
+text = "Preset 3"
+
+[node name="TreeScroll" type="ScrollContainer" parent="Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 2
+
+[node name="Columns" type="HBoxContainer" parent="Layout/TreeScroll"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="DetailPanel" type="PanelContainer" parent="Layout"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="Detail" type="Label" parent="Layout/DetailPanel"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 1220.0
+offset_bottom = 134.0
+autowrap_mode = 2
+
+[node name="Unlock" type="Button" parent="Layout/DetailPanel"]
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 46.0
+offset_right = 1600.0
+offset_bottom = 106.0
+text = "Unlock node"

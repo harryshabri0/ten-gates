@@ -1,0 +1,1 @@
+{"id":"sky_carrier","name":"Sky Carrier","world":8,"hp":300.0,"speed":68.0,"armor":14,"physical_resist":0.10,"magic_resist":0.10,"flying":true,"stealth":false,"bounty":45,"leak_weight":2,"radius":24.0,"color":"#b8d1e5","abilities":[{"id":"carrier_drop","interval":6.0,"count":3,"child_id":"grunt"}]}

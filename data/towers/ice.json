@@ -1,0 +1,19 @@
+{
+  "id": "ice", "name": "Menara Es", "unlock_world": 2, "targets": ["ground", "air"], "base_cost": 130, "role": "control", "element": "ice", "slot_affinity": "ice", "color": "#78d9f4",
+  "levels": [
+    {"level": 1, "damage": 8.0, "interval": 0.75, "range": 205.0, "projectile_speed": 690.0, "splash": 0.0, "visual": "crystal", "slow_duration": 1.4, "slow_multiplier": 0.72},
+    {"level": 2, "damage": 12.0, "interval": 0.70, "range": 215.0, "projectile_speed": 710.0, "splash": 0.0, "visual": "frost", "slow_duration": 1.7, "slow_multiplier": 0.66},
+    {"level": 3, "damage": 17.0, "interval": 0.65, "range": 225.0, "projectile_speed": 730.0, "splash": 22.0, "visual": "glow", "slow_duration": 2.0, "slow_multiplier": 0.58, "freeze_chance": 0.16}
+  ],
+  "branches": {
+    "A": {"name": "Glacier", "levels": [
+      {"level": 4, "damage": 25.0, "interval": 0.62, "range": 235.0, "projectile_speed": 750.0, "splash": 28.0, "visual": "blue", "slow_duration": 2.8, "slow_multiplier": 0.40, "freeze_chance": 0.32},
+      {"level": 5, "damage": 34.0, "interval": 0.58, "range": 250.0, "projectile_speed": 770.0, "splash": 35.0, "visual": "blue_ultimate", "ability": "absolute_zero", "ability_cooldown": 12.0}
+    ]},
+    "B": {"name": "Blizzard", "levels": [
+      {"level": 4, "damage": 16.0, "interval": 0.42, "range": 245.0, "projectile_speed": 710.0, "splash": 56.0, "visual": "white", "slow_duration": 2.1, "slow_multiplier": 0.62},
+      {"level": 5, "damage": 23.0, "interval": 0.38, "range": 260.0, "projectile_speed": 720.0, "splash": 72.0, "visual": "white_ultimate", "ability": "whiteout", "ability_cooldown": 4.0}
+    ]}
+  }
+}
+

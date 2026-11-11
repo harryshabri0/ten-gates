@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/core/input_controller.gd" id="1_input"]
+[ext_resource type="PackedScene" path="res://scenes/ui/debug_overlay.tscn" id="2_debug"]
+[ext_resource type="Script" path="res://scripts/gameplay/game_controller.gd" id="3_controller"]
+[ext_resource type="Script" path="res://scripts/gameplay/enemy_manager.gd" id="4_enemy"]
+[ext_resource type="Script" path="res://scripts/gameplay/projectile_pool.gd" id="5_projectile"]
+[ext_resource type="Script" path="res://scripts/gameplay/wave_director.gd" id="6_wave"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_hud.tscn" id="7_hud"]
+[ext_resource type="Script" path="res://scripts/gameplay/status_system.gd" id="8_status"]
+[ext_resource type="Script" path="res://scripts/gameplay/boss_controller.gd" id="9_boss"]
+[ext_resource type="Script" path="res://scripts/gameplay/spell_system.gd" id="10_spell"]
+[ext_resource type="PackedScene" path="res://scenes/ui/feedback_layer.tscn" id="11_feedback"]
+[ext_resource type="Script" path="res://scripts/gameplay/world_rule_controller.gd" id="12_rules"]
+
+[node name="GameRoot" type="Node2D"]
+script = ExtResource("3_controller")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.035, 0.055, 0.09, 1)
+mouse_filter = 2
+show_behind_parent = true
+
+[node name="InputController" type="Node" parent="."]
+script = ExtResource("1_input")
+
+[node name="EnemyManager" type="Node2D" parent="."]
+script = ExtResource("4_enemy")
+
+[node name="ProjectilePool" type="Node2D" parent="."]
+script = ExtResource("5_projectile")
+
+[node name="WaveDirector" type="Node" parent="."]
+script = ExtResource("6_wave")
+
+[node name="StatusSystem" type="Node" parent="."]
+script = ExtResource("8_status")
+
+[node name="BossController" type="Node2D" parent="."]
+script = ExtResource("9_boss")
+
+[node name="SpellSystem" type="Node" parent="."]
+script = ExtResource("10_spell")
+
+[node name="WorldRuleController" type="Node" parent="."]
+script = ExtResource("12_rules")
+
+[node name="GameHud" parent="." instance=ExtResource("7_hud")]
+
+[node name="DebugOverlay" parent="." instance=ExtResource("2_debug")]
+
+[node name="FeedbackLayer" parent="." instance=ExtResource("11_feedback")]
+

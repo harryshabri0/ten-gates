@@ -1,0 +1,1 @@
+{"id":"necro_acolyte","name":"Akolit Nekro","world":5,"hp":125.0,"speed":48.0,"armor":2,"physical_resist":0.0,"magic_resist":0.20,"flying":false,"stealth":false,"bounty":27,"leak_weight":1,"radius":16.0,"color":"#9161b1","abilities":[{"id":"revive","interval":8.0,"count":1,"hp_ratio":0.30}]}

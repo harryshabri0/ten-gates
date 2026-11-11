@@ -1,0 +1,88 @@
+{
+  "branches": [
+    {"id":"offense","name":"Ofensif","nodes":[
+      {"id":"sharpness","tier":1,"cost":3,"name":"Ketajaman","description":"+5% damage semua tower","modifiers":[{"stat":"tower_damage","op":"percent","value":0.05}]},
+      {"id":"eagle_eye","tier":1,"cost":3,"name":"Mata Elang","description":"+6% jangkauan semua tower","modifiers":[{"stat":"tower_range","op":"percent","value":0.06}]},
+      {"id":"nimble_hands","tier":1,"cost":3,"name":"Tangan Cekatan","description":"+5% attack speed semua tower","modifiers":[{"stat":"tower_attack_speed","op":"percent","value":0.05}]},
+      {"id":"elite_hunter","tier":1,"cost":3,"name":"Pemburu Elit","description":"+10% damage elit dan boss","modifiers":[{"stat":"elite_boss_damage","op":"percent","value":0.10}]},
+      {"id":"weak_point","tier":2,"cost":6,"name":"Titik Lemah","description":"Crit 8% x1,5","modifiers":[{"stat":"tower_crit_chance","op":"flat","value":0.08}]},
+      {"id":"armor_breaker","tier":2,"cost":6,"name":"Dobrak Armor","description":"Abaikan 15% armor","modifiers":[{"stat":"armor_ignore","op":"flat","value":0.15}]},
+      {"id":"momentum","tier":2,"cost":6,"name":"Momentum","description":"+2% damage per wave, maks 20%","modifiers":[{"stat":"wave_damage_bonus","op":"flat","value":0.02}]},
+      {"id":"finisher","tier":2,"cost":6,"name":"Pukulan Penutup","description":"+25% damage di bawah 25% HP","modifiers":[{"stat":"execute_damage","op":"percent","value":0.25}]},
+      {"id":"glass_cannon","tier":3,"cost":12,"name":"Glass Cannon","description":"+25% damage, HP Markas -30%","modifiers":[{"stat":"tower_damage","op":"percent","value":0.25},{"stat":"base_hp","op":"percent","value":-0.30}]},
+      {"id":"armory_berserk","tier":3,"cost":12,"name":"Armory Berserk","description":"Surge tower acak tiap 25 kill","modifiers":[{"stat":"armory_berserk","op":"flat","value":1}]}
+    ]},
+    {"id":"fortress","name":"Benteng","nodes":[
+      {"id":"thick_walls","tier":1,"cost":3,"name":"Dinding Tebal","description":"+5 HP Markas","modifiers":[{"stat":"base_hp","op":"flat","value":5}]},
+      {"id":"base_repair","tier":1,"cost":3,"name":"Perbaikan Markas","description":"Pulih 1 HP tiap 3 wave","modifiers":[{"stat":"base_repair","op":"flat","value":1}]},
+      {"id":"tough_soldiers","tier":1,"cost":3,"name":"Prajurit Tangguh","description":"+15% HP prajurit","modifiers":[{"stat":"soldier_hp","op":"percent","value":0.15}]},
+      {"id":"iron_gate","tier":1,"cost":3,"name":"Gerbang Besi","description":"Bobot bocor elit -1","modifiers":[{"stat":"elite_leak_weight","op":"flat","value":-1}]},
+      {"id":"gatekeeper","tier":2,"cost":6,"name":"Penjaga Gerbang","description":"Bocor pertama per wave diabaikan","modifiers":[{"stat":"free_leak_per_wave","op":"flat","value":1}]},
+      {"id":"battlefield","tier":2,"cost":6,"name":"Medan Perang","description":"+20% damage Barak dan prajurit","modifiers":[{"stat":"barracks_damage","op":"percent","value":0.20}]},
+      {"id":"tower_resilience","tier":2,"cost":6,"name":"Ketahanan Tower","description":"Disable pertama tiap wave diabaikan","modifiers":[{"stat":"ignore_first_disable","op":"flat","value":1}]},
+      {"id":"regroup","tier":2,"cost":6,"name":"Regroup","description":"Prajurit respawn 30% lebih cepat","modifiers":[{"stat":"soldier_respawn","op":"percent","value":0.30}]},
+      {"id":"last_fortress","tier":3,"cost":12,"name":"Benteng Terakhir","description":"Surge saat HP Markas kritis","modifiers":[{"stat":"low_hp_surge","op":"flat","value":1}]},
+      {"id":"eternal_heart","tier":3,"cost":12,"name":"Jantung Abadi","description":"Hidup sekali dengan 40% HP","modifiers":[{"stat":"revive_once","op":"flat","value":0.40}]}
+    ]},
+    {"id":"economy","name":"Ekonomi","nodes":[
+      {"id":"gold_pocket","tier":1,"cost":3,"name":"Kantong Emas","description":"+10% gold awal","modifiers":[{"stat":"starting_gold","op":"percent","value":0.10}]},
+      {"id":"spoils","tier":1,"cost":3,"name":"Rampasan","description":"+5% bounty kill","modifiers":[{"stat":"bounty","op":"percent","value":0.05}]},
+      {"id":"bargain","tier":1,"cost":3,"name":"Tawar-Menawar","description":"+5% refund jual","modifiers":[{"stat":"sell_refund","op":"flat","value":0.05}]},
+      {"id":"quick_call","tier":1,"cost":3,"name":"Pemanggil Cepat","description":"+25% bonus Call Early","modifiers":[{"stat":"call_early","op":"percent","value":0.25}]},
+      {"id":"investment","tier":2,"cost":6,"name":"Investasi","description":"Bunga 1,5% tiap wave (cap 100)","modifiers":[{"stat":"wave_interest","op":"flat","value":0.015}]},
+      {"id":"branch_discount","tier":2,"cost":6,"name":"Diskon Cabang","description":"Upgrade L4/L5 -10%","modifiers":[{"stat":"high_upgrade_cost","op":"percent","value":-0.10}]},
+      {"id":"bounty_hunter","tier":2,"cost":6,"name":"Pemburu Hadiah","description":"Mini-boss +100 gold x dunia","modifiers":[{"stat":"miniboss_bonus","op":"flat","value":100}]},
+      {"id":"granary","tier":2,"cost":6,"name":"Lumbung Wave","description":"+15 gold x dunia tiap wave","modifiers":[{"stat":"wave_gold","op":"flat","value":15}]},
+      {"id":"merchant_king","tier":3,"cost":12,"name":"Raja Pedagang","description":"Bunga x2, bounty -10%","modifiers":[{"stat":"interest_multiplier","op":"percent","value":1.0},{"stat":"bounty","op":"percent","value":-0.10}]},
+      {"id":"fast_builder","tier":3,"cost":12,"name":"Pembangun Cepat","description":"Upgrade -8%, tower aktif seketika","modifiers":[{"stat":"tower_upgrade_cost","op":"percent","value":-0.08}]}
+    ]},
+    {"id":"arcana","name":"Arkana","nodes":[
+      {"id":"meteor_shower","tier":1,"cost":3,"name":"Meteor Shower","description":"Membuka Meteor Shower","modifiers":[{"stat":"unlock_spell_meteor_shower","op":"flat","value":1}]},
+      {"id":"time_freeze","tier":1,"cost":3,"name":"Time Freeze","description":"Membuka Time Freeze","modifiers":[{"stat":"unlock_spell_time_freeze","op":"flat","value":1}]},
+      {"id":"reinforcements","tier":1,"cost":3,"name":"Reinforcements","description":"Membuka Reinforcements","modifiers":[{"stat":"unlock_spell_reinforcements","op":"flat","value":1}]},
+      {"id":"meditation","tier":1,"cost":3,"name":"Meditasi","description":"Cooldown skill -8%","modifiers":[{"stat":"spell_cooldown","op":"percent","value":-0.08}]},
+      {"id":"overcharge","tier":2,"cost":6,"name":"Overcharge","description":"Membuka Overcharge","modifiers":[{"stat":"unlock_spell_overcharge","op":"flat","value":1}]},
+      {"id":"gold_rush","tier":2,"cost":6,"name":"Gold Rush","description":"Membuka Gold Rush","modifiers":[{"stat":"unlock_spell_gold_rush","op":"flat","value":1}]},
+      {"id":"holy_barrier","tier":2,"cost":6,"name":"Holy Barrier","description":"Membuka Holy Barrier","modifiers":[{"stat":"unlock_spell_holy_barrier","op":"flat","value":1}]},
+      {"id":"amplification","tier":2,"cost":6,"name":"Amplifikasi","description":"Damage/durasi skill +20%","modifiers":[{"stat":"spell_power","op":"percent","value":0.20}]},
+      {"id":"third_slot","tier":3,"cost":12,"name":"Slot Ketiga","description":"Membawa 3 skill aktif","modifiers":[{"stat":"third_spell_slot","op":"flat","value":1}]},
+      {"id":"spell_echo","tier":3,"cost":12,"name":"Gema Sihir","description":"Skill lain cooldown -10% saat dipakai","modifiers":[{"stat":"spell_echo","op":"flat","value":0.10}]}
+    ]},
+    {"id":"marksman","name":"Mastery Marksman","nodes":[
+      {"id":"heavy_shells","tier":1,"cost":3,"name":"Peluru Berat","description":"Radius Meriam +10%","modifiers":[{"stat":"cannon_splash","op":"percent","value":0.10}]},
+      {"id":"sharp_arrows","tier":1,"cost":3,"name":"Panah Tajam","description":"Pemanah/Skyfang +10% damage","modifiers":[{"stat":"archer_damage","op":"percent","value":0.10}]},
+      {"id":"breaker_bolt","tier":1,"cost":3,"name":"Bolt Pemecah","description":"Balista +15% vs armor","modifiers":[{"stat":"ballista_armor_damage","op":"percent","value":0.15}]},
+      {"id":"skilled_mechanic","tier":1,"cost":3,"name":"Mekanik Terampil","description":"Ranjau +20%, drone HP +25%","modifiers":[{"stat":"mechanic_mine_damage","op":"percent","value":0.20}]},
+      {"id":"ricochet","tier":2,"cost":6,"name":"Ricochet","description":"15% proyektil menembus target tambahan","modifiers":[{"stat":"physical_pierce_chance","op":"flat","value":0.15}]},
+      {"id":"armor_piercing","tier":2,"cost":6,"name":"Penembus Armor","description":"Proyektil kurangi armor","modifiers":[{"stat":"physical_armor_break","op":"flat","value":0.10}]},
+      {"id":"calibration","tier":2,"cost":6,"name":"Kalibrasi","description":"Proyektil +10% speed, +5% range","modifiers":[{"stat":"projectile_speed","op":"percent","value":0.10},{"stat":"tower_range","op":"percent","value":0.05}]},
+      {"id":"quick_reload","tier":2,"cost":6,"name":"Reload Cepat","description":"Reload Meriam/Balista -12%","modifiers":[{"stat":"cannon_attack_speed","op":"percent","value":0.12}]},
+      {"id":"one_shot_one_kill","tier":3,"cost":12,"name":"Satu Peluru Satu Nyawa","description":"Tembakan pertama selalu crit","modifiers":[{"stat":"first_shot_crit","op":"flat","value":1}]},
+      {"id":"barrage","tier":3,"cost":12,"name":"Barrage","description":"Salvo 3 peluru tiap 10 tembakan","modifiers":[{"stat":"physical_barrage","op":"flat","value":3}]}
+    ]},
+    {"id":"elementalist","name":"Mastery Elementalist","nodes":[
+      {"id":"eternal_fire","tier":1,"cost":3,"name":"Api Abadi","description":"Burn +20% durasi","modifiers":[{"stat":"burn_duration","op":"percent","value":0.20}]},
+      {"id":"frost_dew","tier":1,"cost":3,"name":"Embun Beku","description":"Slow +10% kuat","modifiers":[{"stat":"slow_strength","op":"percent","value":0.10}]},
+      {"id":"fast_lightning","tier":1,"cost":3,"name":"Petir Cepat","description":"Tesla +1 target","modifiers":[{"stat":"tesla_chain_targets","op":"flat","value":1}]},
+      {"id":"flowing_mana","tier":1,"cost":3,"name":"Mana Mengalir","description":"Arkana +10% damage, Void +10% radius","modifiers":[{"stat":"arcane_damage","op":"percent","value":0.10}]},
+      {"id":"pure_reaction","tier":2,"cost":6,"name":"Reaksi Murni","description":"Damage reaksi +25%","modifiers":[{"stat":"reaction_damage","op":"percent","value":0.25}]},
+      {"id":"resonance","tier":2,"cost":6,"name":"Resonansi","description":"10% status menyebar","modifiers":[{"stat":"status_spread_chance","op":"flat","value":0.10}]},
+      {"id":"element_fusion","tier":2,"cost":6,"name":"Penyatu Elemen","description":"2 status berbeda +8% damage","modifiers":[{"stat":"two_status_damage","op":"percent","value":0.08}]},
+      {"id":"anti_resist","tier":2,"cost":6,"name":"Anti-Resist","description":"Resist sihir -15%","modifiers":[{"stat":"magic_resist_reduction","op":"flat","value":0.15}]},
+      {"id":"chain_reaction","tier":3,"cost":12,"name":"Reaksi Berantai","description":"Reaksi memicu ledakan area","modifiers":[{"stat":"chain_reaction","op":"flat","value":1}]},
+      {"id":"focus_controller","tier":3,"cost":12,"name":"Pengendali Fokus","description":"Fokus satu elemen sebelum level","modifiers":[{"stat":"element_focus","op":"flat","value":1}]}
+    ]},
+    {"id":"tactical","name":"Mastery Taktikal","nodes":[
+      {"id":"barracks_commander","tier":1,"cost":3,"name":"Komandan Barak","description":"Prajurit +10% HP, +5% damage","modifiers":[{"stat":"barracks_damage","op":"percent","value":0.05},{"stat":"soldier_hp","op":"percent","value":0.10}]},
+      {"id":"thick_poison","tier":1,"cost":3,"name":"Racun Pekat","description":"Poison +10% DoT, +1 stack","modifiers":[{"stat":"poison_damage","op":"percent","value":0.10},{"stat":"poison_max_stacks","op":"flat","value":1}]},
+      {"id":"profit_count","tier":1,"cost":3,"name":"Hitung Untung","description":"Tower Koin +10% gold","modifiers":[{"stat":"coin_tower_gold","op":"percent","value":0.10}]},
+      {"id":"war_banner","tier":1,"cost":3,"name":"Panji Perang","description":"Totem radius/efek +10%","modifiers":[{"stat":"totem_effect","op":"percent","value":0.10}]},
+      {"id":"elite_training","tier":2,"cost":6,"name":"Pelatihan Elit","description":"Barak L4+ +1 prajurit","modifiers":[{"stat":"barracks_extra_soldier","op":"flat","value":1}]},
+      {"id":"pest_immunity","tier":2,"cost":6,"name":"Kebal Hama","description":"Poison mengurangi heal 20%","modifiers":[{"stat":"poison_heal_reduction","op":"flat","value":0.20}]},
+      {"id":"bookkeeping","tier":2,"cost":6,"name":"Pembukuan","description":"Tower Koin memberi gold saat boss mati","modifiers":[{"stat":"boss_coin_gold","op":"flat","value":1}]},
+      {"id":"synergy","tier":2,"cost":6,"name":"Sinergi","description":"Tower dekat Totem/Barak +5% speed","modifiers":[{"stat":"adjacent_support_speed","op":"percent","value":0.05}]},
+      {"id":"commander","tier":3,"cost":12,"name":"Panglima","description":"Aura Totem +2 slot, +25% efek","modifiers":[{"stat":"totem_effect","op":"percent","value":0.25}]},
+      {"id":"field_general","tier":3,"cost":12,"name":"Jenderal Lapangan","description":"Reinforcements +50% dan ultimat Barak","modifiers":[{"stat":"reinforcement_strength","op":"percent","value":0.50}]}
+    ]}
+  ]
+}

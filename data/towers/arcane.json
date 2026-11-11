@@ -1,0 +1,19 @@
+{
+  "id": "arcane", "name": "Menara Arkana", "unlock_world": 2, "targets": ["ground", "air"], "base_cost": 170, "role": "magic", "element": "arcane", "slot_affinity": "arcane", "color": "#d783f2",
+  "levels": [
+    {"level": 1, "damage": 25.0, "interval": 0.95, "range": 210.0, "projectile_speed": 980.0, "splash": 0.0, "visual": "orb"},
+    {"level": 2, "damage": 37.0, "interval": 0.88, "range": 220.0, "projectile_speed": 1020.0, "splash": 0.0, "visual": "rune"},
+    {"level": 3, "damage": 54.0, "interval": 0.80, "range": 230.0, "projectile_speed": 1060.0, "splash": 0.0, "visual": "prism"}
+  ],
+  "branches": {
+    "A": {"name": "Arcane Piercer", "levels": [
+      {"level": 4, "damage": 74.0, "interval": 0.72, "range": 245.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "magenta", "ability": "piercing_beam", "pierce_count": 3},
+      {"level": 5, "damage": 98.0, "interval": 0.66, "range": 260.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "magenta_ultimate", "ability": "prism_beam", "pierce_count": 3}
+    ]},
+    "B": {"name": "Chronomancer", "levels": [
+      {"level": 4, "damage": 52.0, "interval": 0.64, "range": 255.0, "projectile_speed": 900.0, "splash": 34.0, "visual": "violet", "slow_duration": 1.8, "slow_multiplier": 0.62},
+      {"level": 5, "damage": 70.0, "interval": 0.60, "range": 270.0, "projectile_speed": 920.0, "splash": 45.0, "visual": "violet_ultimate", "ability": "time_stop", "ability_cooldown": 20.0}
+    ]}
+  }
+}
+

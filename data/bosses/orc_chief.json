@@ -1,0 +1,7 @@
+{
+  "id":"orc_chief","name":"Kepala Orc","kind":"mini_boss","world":1,
+  "hp":900.0,"speed":45.0,"armor":12,"physical_resist":0.10,"magic_resist":0.0,"flying":false,"stealth":false,
+  "bounty":120,"leak_weight":5,"radius":34.0,"color":"#b94d39","abilities":[],
+  "phases":[{"threshold":1.0,"abilities":[{"id":"charge","interval":10.0,"speed_multiplier":2.0,"duration":2.0},{"id":"summon","count":4,"enemy":"grunt"}]}]
+}
+

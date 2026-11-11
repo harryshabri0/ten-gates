@@ -1,0 +1,19 @@
+{
+  "id": "barracks", "name": "Barak", "targets": ["ground"], "base_cost": 120, "role": "block", "element": "physical", "slot_affinity": "", "color": "#89a6ed",
+  "levels": [
+    {"level": 1, "damage": 9.0, "interval": 0.55, "range": 115.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "tent"},
+    {"level": 2, "damage": 14.0, "interval": 0.52, "range": 120.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "shield"},
+    {"level": 3, "damage": 20.0, "interval": 0.48, "range": 125.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "fort"}
+  ],
+  "branches": {
+    "A": {"name": "Knight Order", "levels": [
+      {"level": 4, "damage": 29.0, "interval": 0.45, "range": 140.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "gold", "block_duration": 0.85},
+      {"level": 5, "damage": 40.0, "interval": 0.42, "range": 150.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "gold_ultimate", "ability": "paladin_aura"}
+    ]},
+    "B": {"name": "Shadow Guild", "levels": [
+      {"level": 4, "damage": 25.0, "interval": 0.31, "range": 130.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "purple"},
+      {"level": 5, "damage": 35.0, "interval": 0.27, "range": 135.0, "projectile_speed": 0.0, "splash": 0.0, "visual": "purple_ultimate", "ability": "assassinate"}
+    ]}
+  }
+}
+

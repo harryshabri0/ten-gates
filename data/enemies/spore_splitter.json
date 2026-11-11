@@ -1,0 +1,1 @@
+{"id":"spore_splitter","name":"Splitter Spora","world":3,"hp":110.0,"speed":55.0,"armor":5,"physical_resist":0.0,"magic_resist":0.0,"flying":false,"stealth":false,"bounty":18,"leak_weight":1,"radius":17.0,"color":"#c675a6","abilities":[{"id":"split","count":2,"child_id":"swarmling","child_hp_ratio":0.55}]}

@@ -1,0 +1,6 @@
+{
+  "easy": {"enemy_hp_multiplier": 0.75, "enemy_speed_multiplier": 0.95, "starting_gold_multiplier": 1.40, "bounty_multiplier": 1.20, "base_hp": 30, "sell_refund": 0.80, "skill_cooldown_multiplier": 0.80, "boss_leak_weight": 5, "elite_waves": false, "extra_waves": 0, "max_stars": 2},
+  "normal": {"enemy_hp_multiplier": 1.00, "enemy_speed_multiplier": 1.00, "starting_gold_multiplier": 1.00, "bounty_multiplier": 1.00, "base_hp": 20, "sell_refund": 0.70, "skill_cooldown_multiplier": 1.00, "boss_leak_weight": 10, "elite_waves": true, "extra_waves": 0, "max_stars": 3},
+  "hard": {"enemy_hp_multiplier": 1.35, "enemy_speed_multiplier": 1.08, "starting_gold_multiplier": 0.80, "bounty_multiplier": 0.90, "base_hp": 10, "sell_refund": 0.60, "skill_cooldown_multiplier": 1.20, "boss_leak_weight": 15, "elite_waves": true, "extra_waves": 2, "max_stars": 3}
+}
+

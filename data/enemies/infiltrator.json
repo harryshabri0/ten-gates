@@ -1,0 +1,1 @@
+{"id":"infiltrator","name":"Penyelinap","world":6,"hp":108.0,"speed":88.0,"armor":0,"physical_resist":0.0,"magic_resist":0.15,"flying":false,"stealth":true,"bounty":26,"leak_weight":1,"radius":15.0,"color":"#4a4f69","abilities":[{"id":"stealth"}]}

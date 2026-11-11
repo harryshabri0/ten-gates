@@ -1,0 +1,20 @@
+{
+  "id": "archer", "name": "Menara Pemanah", "targets": ["ground", "air"], "base_cost": 100, "role": "single_target", "element": "physical", "slot_affinity": "", "color": "#7fd879",
+  "passive": {"id": "focus", "description": "Hit berturut pada target sama: +5% damage per stack, maks. 5."},
+  "levels": [
+    {"level": 1, "damage": 12.0, "interval": 0.85, "range": 215.0, "projectile_speed": 780.0, "splash": 0.0, "visual": "wood"},
+    {"level": 2, "damage": 18.0, "interval": 0.80, "range": 225.0, "projectile_speed": 800.0, "splash": 0.0, "visual": "armor"},
+    {"level": 3, "damage": 26.0, "interval": 0.74, "range": 235.0, "projectile_speed": 830.0, "splash": 0.0, "visual": "stone"}
+  ],
+  "branches": {
+    "A": {"name": "Sharpshooter", "levels": [
+      {"level": 4, "damage": 40.0, "interval": 0.70, "range": 329.0, "projectile_speed": 940.0, "splash": 0.0, "visual": "red", "crit_chance": 0.25},
+      {"level": 5, "damage": 58.0, "interval": 0.66, "range": 350.0, "projectile_speed": 980.0, "splash": 0.0, "visual": "red_ultimate", "ability": "deadeye"}
+    ]},
+    "B": {"name": "Ranger", "levels": [
+      {"level": 4, "damage": 27.0, "interval": 0.62, "range": 245.0, "projectile_speed": 840.0, "splash": 0.0, "visual": "green", "multishot": 2},
+      {"level": 5, "damage": 36.0, "interval": 0.56, "range": 255.0, "projectile_speed": 860.0, "splash": 62.0, "visual": "green_ultimate", "ability": "rain_of_arrows", "ability_cooldown": 8.0}
+    ]}
+  }
+}
+

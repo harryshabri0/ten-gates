@@ -1,0 +1,1 @@
+{"id":"digger","name":"Penggali","world":2,"hp":78.0,"speed":74.0,"armor":4,"physical_resist":0.0,"magic_resist":0.0,"flying":false,"stealth":false,"bounty":15,"leak_weight":1,"radius":14.0,"color":"#8e6953","abilities":[{"id":"burrow","duration":3.0,"jump_path_ratio":0.10}]}

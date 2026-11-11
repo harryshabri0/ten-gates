@@ -1,0 +1,1 @@
+{"id":"ice_knight","name":"Ksatria Es","world":4,"hp":210.0,"speed":42.0,"armor":18,"physical_resist":0.20,"magic_resist":0.0,"flying":false,"stealth":false,"bounty":28,"leak_weight":2,"radius":20.0,"color":"#b5d9ed","abilities":[{"id":"regen_shield","delay":4.0,"shield_ratio":0.25}]}

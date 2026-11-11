@@ -1,0 +1,17 @@
+{
+  "id": "swarmling",
+  "name": "Swarmling",
+  "hp": 24.0,
+  "speed": 92.0,
+  "armor": 0,
+  "physical_resist": 0.0,
+  "magic_resist": 0.0,
+  "flying": false,
+  "stealth": false,
+  "bounty": 5,
+  "leak_weight": 1,
+  "radius": 11.0,
+  "color": "#d8e85a",
+  "abilities": []
+}
+

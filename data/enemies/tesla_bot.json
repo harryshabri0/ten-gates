@@ -1,0 +1,1 @@
+{"id":"tesla_bot","name":"Tesla Bot","world":7,"hp":190.0,"speed":62.0,"armor":12,"physical_resist":0.0,"magic_resist":0.50,"flying":false,"stealth":false,"bounty":34,"leak_weight":2,"radius":18.0,"color":"#56a6dc","status_immunities":["stun"],"abilities":[{"id":"stun_immune"},{"id":"reflect","ratio":0.10}]}

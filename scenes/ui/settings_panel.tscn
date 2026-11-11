@@ -1,0 +1,132 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_panel.gd" id="1_settings"]
+
+[node name="SettingsPanel" type="Panel"]
+offset_left = 570.0
+offset_top = 150.0
+offset_right = 1350.0
+offset_bottom = 930.0
+script = ExtResource("1_settings")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 25.0
+offset_right = 600.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="QualityLabel" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 100.0
+offset_right = 310.0
+offset_bottom = 138.0
+text = "Graphics quality"
+
+[node name="Quality" type="OptionButton" parent="."]
+offset_left = 340.0
+offset_top = 92.0
+offset_right = 716.0
+offset_bottom = 146.0
+
+[node name="FpsLabel" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 170.0
+offset_right = 310.0
+offset_bottom = 208.0
+text = "Frame cap"
+
+[node name="FpsCap" type="OptionButton" parent="."]
+offset_left = 340.0
+offset_top = 162.0
+offset_right = 716.0
+offset_bottom = 216.0
+
+[node name="Battery" type="CheckButton" parent="."]
+offset_left = 36.0
+offset_top = 235.0
+offset_right = 700.0
+offset_bottom = 285.0
+text = "Battery saver"
+
+[node name="LeftHanded" type="CheckButton" parent="."]
+offset_left = 36.0
+offset_top = 292.0
+offset_right = 700.0
+offset_bottom = 342.0
+text = "Left-handed spell controls"
+
+[node name="Colorblind" type="CheckButton" parent="."]
+offset_left = 36.0
+offset_top = 349.0
+offset_right = 700.0
+offset_bottom = 399.0
+text = "Colorblind high contrast"
+
+[node name="ReduceFlash" type="CheckButton" parent="."]
+offset_left = 36.0
+offset_top = 406.0
+offset_right = 700.0
+offset_bottom = 456.0
+text = "Reduce flashes"
+
+[node name="Haptics" type="CheckButton" parent="."]
+offset_left = 36.0
+offset_top = 463.0
+offset_right = 700.0
+offset_bottom = 513.0
+text = "Haptic feedback"
+
+[node name="FontLabel" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 540.0
+offset_right = 250.0
+offset_bottom = 578.0
+text = "Font scale"
+
+[node name="FontScale" type="HSlider" parent="."]
+offset_left = 260.0
+offset_top = 540.0
+offset_right = 716.0
+offset_bottom = 578.0
+min_value = 0.85
+max_value = 1.35
+step = 0.05
+
+[node name="MusicLabel" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 600.0
+offset_right = 250.0
+offset_bottom = 638.0
+text = "Music volume"
+
+[node name="Music" type="HSlider" parent="."]
+offset_left = 260.0
+offset_top = 600.0
+offset_right = 716.0
+offset_bottom = 638.0
+max_value = 1.0
+step = 0.05
+
+[node name="SfxLabel" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 660.0
+offset_right = 250.0
+offset_bottom = 698.0
+text = "SFX volume"
+
+[node name="Sfx" type="HSlider" parent="."]
+offset_left = 260.0
+offset_top = 660.0
+offset_right = 716.0
+offset_bottom = 698.0
+max_value = 1.0
+step = 0.05
+
+[node name="Close" type="Button" parent="."]
+offset_left = 530.0
+offset_top = 710.0
+offset_right = 716.0
+offset_bottom = 760.0
+text = "Close"

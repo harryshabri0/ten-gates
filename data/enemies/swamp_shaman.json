@@ -1,0 +1,1 @@
+{"id":"swamp_shaman","name":"Shaman Rawa","world":3,"hp":90.0,"speed":50.0,"armor":0,"physical_resist":0.0,"magic_resist":0.20,"flying":false,"stealth":false,"bounty":20,"leak_weight":1,"radius":16.0,"color":"#77a05e","abilities":[{"id":"heal_aura","interval":2.0,"radius":135.0,"percent":0.05}]}

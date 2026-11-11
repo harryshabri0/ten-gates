@@ -1,0 +1,1 @@
+{"id":"void_walker","name":"Void Walker","world":9,"hp":230.0,"speed":72.0,"armor":10,"physical_resist":0.0,"magic_resist":0.25,"flying":false,"stealth":false,"bounty":42,"leak_weight":2,"radius":19.0,"color":"#653d94","abilities":[{"id":"teleport","interval":5.0,"path_ratio":0.10}]}

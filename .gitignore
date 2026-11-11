@@ -1,0 +1,11 @@
+.godot/
+.import/
+*.tmp
+*.apk
+*.aab
+*.idsig
+*.import
+*.translation
+android/build/
+tmp/
+

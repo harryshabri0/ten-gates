@@ -1,0 +1,19 @@
+{
+  "id": "cannon", "name": "Meriam", "targets": ["ground"], "base_cost": 150, "role": "area", "element": "physical", "slot_affinity": "", "color": "#e59c57",
+  "levels": [
+    {"level": 1, "damage": 32.0, "interval": 1.35, "range": 195.0, "projectile_speed": 510.0, "splash": 55.0, "visual": "bronze"},
+    {"level": 2, "damage": 48.0, "interval": 1.28, "range": 205.0, "projectile_speed": 530.0, "splash": 60.0, "visual": "iron"},
+    {"level": 3, "damage": 69.0, "interval": 1.18, "range": 215.0, "projectile_speed": 550.0, "splash": 68.0, "visual": "heavy"}
+  ],
+  "branches": {
+    "A": {"name": "Howitzer", "levels": [
+      {"level": 4, "damage": 102.0, "interval": 1.12, "range": 285.0, "projectile_speed": 590.0, "splash": 82.0, "visual": "orange"},
+      {"level": 5, "damage": 148.0, "interval": 1.05, "range": 305.0, "projectile_speed": 620.0, "splash": 118.0, "visual": "orange_ultimate", "ability": "siege_stun"}
+    ]},
+    "B": {"name": "Cluster", "levels": [
+      {"level": 4, "damage": 62.0, "interval": 1.00, "range": 220.0, "projectile_speed": 560.0, "splash": 48.0, "visual": "blue", "multishot": 4},
+      {"level": 5, "damage": 80.0, "interval": 0.92, "range": 230.0, "projectile_speed": 575.0, "splash": 55.0, "visual": "blue_ultimate", "ability": "carpet_bomb", "multishot": 3}
+    ]}
+  }
+}
+

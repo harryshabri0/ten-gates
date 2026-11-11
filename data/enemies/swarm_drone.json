@@ -1,0 +1,1 @@
+{"id":"swarm_drone","name":"Swarm Drone","world":7,"hp":65.0,"speed":115.0,"armor":0,"physical_resist":0.0,"magic_resist":0.10,"flying":true,"stealth":false,"bounty":15,"leak_weight":1,"radius":10.0,"color":"#7f9fbd","abilities":[{"id":"emp_pulse","interval":4.0,"stun_duration":0.5}]}

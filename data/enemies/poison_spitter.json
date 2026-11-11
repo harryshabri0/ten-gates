@@ -1,0 +1,1 @@
+{"id":"poison_spitter","name":"Spitter Racun","world":3,"hp":74.0,"speed":58.0,"armor":0,"physical_resist":0.0,"magic_resist":0.20,"flying":false,"stealth":false,"bounty":17,"leak_weight":1,"radius":14.0,"color":"#56ad74","abilities":[{"id":"tower_weaken","interval":4.0,"duration":5.0,"attack_speed_multiplier":0.80}]}

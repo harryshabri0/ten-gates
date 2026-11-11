@@ -1,0 +1,1 @@
+{"id":"repair_bot","name":"Repair Bot","world":7,"hp":220.0,"speed":44.0,"armor":10,"physical_resist":0.0,"magic_resist":0.15,"flying":false,"stealth":false,"bounty":45,"leak_weight":1,"radius":15.0,"color":"#c8d7d8","abilities":[{"id":"heal_aura","interval":5.0,"radius":460.0,"percent":0.05}]}

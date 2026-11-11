@@ -1,0 +1,9 @@
+{
+  "meteor_shower":{"id":"meteor_shower","name":"Meteor Shower","cooldown":90.0,"targeting":"point","radius":125.0,"damage":260.0},
+  "time_freeze":{"id":"time_freeze","name":"Time Freeze","cooldown":100.0,"targeting":"global","duration":4.0,"boss_duration":1.5},
+  "reinforcements":{"id":"reinforcements","name":"Reinforcements","cooldown":80.0,"targeting":"point","duration":15.0,"radius":95.0,"damage":22.0,"interval":0.5},
+  "overcharge":{"id":"overcharge","name":"Overcharge","cooldown":90.0,"targeting":"global","duration":10.0,"attack_speed_multiplier":1.40},
+  "gold_rush":{"id":"gold_rush","name":"Gold Rush","cooldown":75.0,"targeting":"global","duration":15.0,"bounty_multiplier":1.25},
+  "holy_barrier":{"id":"holy_barrier","name":"Holy Barrier","cooldown":100.0,"targeting":"global","leaks_prevented":3}
+}
+

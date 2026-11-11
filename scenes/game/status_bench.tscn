@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/game/game_root.tscn" id="1_game"]
+[ext_resource type="Script" path="res://scripts/gameplay/status_bench_runner.gd" id="2_runner"]
+
+[node name="StatusBench" type="Node"]
+
+[node name="GameRoot" parent="." instance=ExtResource("1_game")]
+
+[node name="Runner" type="Node" parent="."]
+script = ExtResource("2_runner")

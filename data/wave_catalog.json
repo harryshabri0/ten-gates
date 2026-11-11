@@ -1,0 +1,16 @@
+{
+  "world": 1,
+  "enemy_points": {
+    "grunt": 10,
+    "runner": 13,
+    "brute": 28,
+    "swarmling": 5
+  },
+  "templates": {
+    "intro": ["grunt"],
+    "rush": ["runner", "swarmling"],
+    "tank": ["brute", "grunt"],
+    "mixed": ["grunt", "runner", "brute", "swarmling"]
+  }
+}
+

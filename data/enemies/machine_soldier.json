@@ -1,0 +1,1 @@
+{"id":"machine_soldier","name":"Prajurit Mesin","world":7,"hp":245.0,"speed":52.0,"armor":30,"physical_resist":0.35,"magic_resist":0.0,"flying":false,"stealth":false,"bounty":36,"leak_weight":2,"radius":19.0,"color":"#9ea4ad","abilities":[{"id":"repair_if_idle","percent_per_second":0.01}]}

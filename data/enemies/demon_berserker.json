@@ -1,0 +1,1 @@
+{"id":"demon_berserker","name":"Iblis Berserker","world":10,"hp":280.0,"speed":76.0,"armor":15,"physical_resist":0.20,"magic_resist":0.15,"flying":false,"stealth":false,"bounty":50,"leak_weight":2,"radius":21.0,"color":"#a62f37","abilities":[{"id":"enrage_on_ally_death","speed_per_stack":0.06}]}

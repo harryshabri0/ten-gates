@@ -1,0 +1,1 @@
+{"id":"bomber_imp","name":"Imp Pengebom","world":6,"hp":80.0,"speed":98.0,"armor":0,"physical_resist":0.0,"magic_resist":0.0,"flying":false,"stealth":false,"bounty":25,"leak_weight":1,"radius":13.0,"color":"#ef8b41","abilities":[{"id":"bomb_on_reach","tower_disable_duration":5.0}]}

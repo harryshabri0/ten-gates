@@ -1,0 +1,214 @@
+{
+  "level_id": "1-1",
+  "layout": "w1_layoutA",
+  "modifier": null,
+  "challenge": {
+    "type": "no_leak"
+  },
+  "starting_gold": 500,
+  "base_hp": 20,
+  "waves": [
+    {
+      "w": 1,
+      "template": "intro",
+      "groups": [
+        {
+          "enemy": "grunt",
+          "count": 7,
+          "interval": 0.62
+        }
+      ]
+    },
+    {
+      "w": 2,
+      "template": "rush",
+      "groups": [
+        {
+          "enemy": "runner",
+          "count": 4,
+          "interval": 0.52
+        },
+        {
+          "enemy": "swarmling",
+          "count": 9,
+          "interval": 0.18
+        }
+      ]
+    },
+    {
+      "w": 3,
+      "template": "intro",
+      "groups": [
+        {
+          "enemy": "grunt",
+          "count": 7,
+          "interval": 0.62
+        }
+      ]
+    },
+    {
+      "w": 4,
+      "template": "tank",
+      "groups": [
+        {
+          "enemy": "brute",
+          "count": 2,
+          "interval": 1.2
+        },
+        {
+          "enemy": "grunt",
+          "count": 7,
+          "interval": 0.48
+        }
+      ]
+    },
+    {
+      "w": 5,
+      "template": "mixed",
+      "groups": [
+        {
+          "enemy": "grunt",
+          "count": 7,
+          "interval": 0.46
+        },
+        {
+          "enemy": "runner",
+          "count": 4,
+          "interval": 0.54
+        },
+        {
+          "enemy": "swarmling",
+          "count": 9,
+          "interval": 0.18
+        }
+      ]
+    },
+    {
+      "w": 6,
+      "template": "rush",
+      "groups": [
+        {
+          "enemy": "runner",
+          "count": 5,
+          "interval": 0.52
+        },
+        {
+          "enemy": "swarmling",
+          "count": 12,
+          "interval": 0.18
+        }
+      ]
+    },
+    {
+      "w": 7,
+      "template": "tank",
+      "groups": [
+        {
+          "enemy": "brute",
+          "count": 2,
+          "interval": 1.2
+        },
+        {
+          "enemy": "grunt",
+          "count": 8,
+          "interval": 0.48
+        }
+      ]
+    },
+    {
+      "w": 8,
+      "template": "mixed",
+      "groups": [
+        {
+          "enemy": "grunt",
+          "count": 8,
+          "interval": 0.46
+        },
+        {
+          "enemy": "runner",
+          "count": 5,
+          "interval": 0.54
+        },
+        {
+          "enemy": "swarmling",
+          "count": 11,
+          "interval": 0.18
+        }
+      ]
+    },
+    {
+      "w": 9,
+      "template": "rush",
+      "groups": [
+        {
+          "enemy": "runner",
+          "count": 6,
+          "interval": 0.52
+        },
+        {
+          "enemy": "swarmling",
+          "count": 15,
+          "interval": 0.18
+        }
+      ]
+    },
+    {
+      "w": 10,
+      "template": "tank",
+      "groups": [
+        {
+          "enemy": "brute",
+          "count": 3,
+          "interval": 1.2
+        },
+        {
+          "enemy": "grunt",
+          "count": 9,
+          "interval": 0.48
+        }
+      ]
+    },
+    {
+      "w": 11,
+      "template": "mixed",
+      "groups": [
+        {
+          "enemy": "grunt",
+          "count": 9,
+          "interval": 0.46
+        },
+        {
+          "enemy": "runner",
+          "count": 6,
+          "interval": 0.54
+        },
+        {
+          "enemy": "swarmling",
+          "count": 13,
+          "interval": 0.18
+        }
+      ]
+    },
+    {
+      "w": 12,
+      "template": "mixed",
+      "groups": [
+        {
+          "enemy": "grunt",
+          "count": 9,
+          "interval": 0.46
+        },
+        {
+          "enemy": "runner",
+          "count": 6,
+          "interval": 0.54
+        },
+        {
+          "enemy": "swarmling",
+          "count": 13,
+          "interval": 0.18
+        }
+      ]
+    }
+  ]
+}

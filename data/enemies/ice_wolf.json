@@ -1,0 +1,1 @@
+{"id":"ice_wolf","name":"Serigala Es","world":4,"hp":92.0,"speed":122.0,"armor":0,"physical_resist":0.0,"magic_resist":0.0,"flying":false,"stealth":false,"bounty":19,"leak_weight":1,"radius":14.0,"color":"#9fe8ff","abilities":[{"id":"slow_resist","multiplier":0.50}]}
