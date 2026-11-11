@@ -155,6 +155,8 @@ func _ready() -> void:
 	_hud.set_third_spell_slot_state(_spell_system.has_third_slot(), _available_skill_points())
 	if not active_run.is_empty() and String(active_run.get("level_id", "")) == level_id:
 		_restore_active_run(active_run)
+	else:
+		call_deferred("_begin_opening_assault")
 	_update_tutorial("start")
 	if UpdateService.has_update():
 		_on_update_available(UpdateService.get_pending_version())
@@ -163,6 +165,39 @@ func _ready() -> void:
 func _on_update_available(version: String) -> void:
 	_hud.show_update_available(version)
 	_hud.set_hint("Update Ten Gates v%s is available. Tap UPDATE to download it." % version)
+
+func _begin_opening_assault() -> void:
+	## New maps open with a free Archer and then begin Wave 1 automatically.
+	## This makes it immediately clear that the path is alive without trapping a
+	## first-time player in an unwinnable opening.
+	await get_tree().create_timer(1.25).timeout
+	if _towers.is_empty():
+		_place_starter_archer()
+	# A visible scout confirms that the map is alive while Wave 1 is queued.
+	_enemy_manager.queue_spawn("grunt", 1, 0.08)
+	_on_next_wave_requested()
+
+func _place_starter_archer() -> void:
+	if not _tower_definitions.has("archer"):
+		return
+	var slot: int = 0
+	while slot < _slot_positions.size() and _slot_types[slot] == "locked":
+		slot += 1
+	if slot >= _slot_positions.size():
+		return
+	var tower := PrototypeTower.new()
+	tower.position = _slot_positions[slot]
+	tower.configure(_tower_definitions["archer"], _slot_types[slot])
+	tower.set_skill_modifiers(_skill_modifiers)
+	tower.set_world_range_multiplier(_world_rules.get_tower_range_multiplier())
+	tower.set_world_element_damage_multipliers(_world_rules.get_element_damage_multipliers())
+	add_child(tower)
+	tower.hide()
+	_towers.append(tower)
+	_tower_by_slot[slot] = tower
+	_slots_occupied[slot] = 1
+	_hud.set_hint("Starter Archer deployed. Wave 1 is approaching!")
+	AudioDirector.play_build()
 
 func _process(delta: float) -> void:
 	if _is_paused:

@@ -25,6 +25,7 @@ func _ready() -> void:
 func _setup_viewport() -> void:
 	_viewport = SubViewport.new()
 	_viewport.size = Vector2i(1920, 1080)
+	_viewport.own_world_3d = true
 	_viewport.transparent_bg = false
 	_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	add_child(_viewport)
@@ -34,7 +35,9 @@ func _setup_viewport() -> void:
 	display.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	display.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	display.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	display.z_index = -10
+	display.position = Vector2.ZERO
+	display.size = Vector2(1920.0, 1080.0)
+	display.z_index = 0
 	get_parent().call_deferred("add_child", display)
 	get_parent().call_deferred("move_child", display, 0)
 	var backdrop: CanvasItem = get_parent().get_node_or_null("Backdrop") as CanvasItem
@@ -72,6 +75,7 @@ func _setup_world() -> void:
 	_camera = Camera3D.new()
 	_camera.projection = Camera3D.PROJECTION_ORTHOGONAL
 	_camera.size = _zoom_size
+	_camera.current = true
 	_camera.position = Vector3(0.0, 13.5, 10.5)
 	_world_root.add_child(_camera)
 	_camera.look_at(Vector3(0.0, 0.0, 0.0))

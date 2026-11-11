@@ -50,14 +50,15 @@ func start_next_wave() -> bool:
 	if _running_wave or _next_wave_index >= _waves.size():
 		return false
 	var wave: Dictionary = _waves[_next_wave_index]
+	var modifier: String = str(_current_level.get("modifier", ""))
 	for group: Dictionary in Array(wave.get("groups", [])):
 		if group.has("boss"):
-			boss_requested.emit(String(group["boss"]))
+			boss_requested.emit(str(group["boss"]))
 			continue
 		var interval: float = float(group["interval"])
-		if String(_current_level.get("modifier", "")) == "fast_waves":
+		if modifier == "fast_waves":
 			interval *= 0.70
-		_enemy_manager.queue_spawn(String(group["enemy"]), int(group["count"]), interval, bool(group.get("elite", false)) or String(_current_level.get("modifier", "")) == "elite_dominant")
+		_enemy_manager.queue_spawn(str(group["enemy"]), int(group["count"]), interval, bool(group.get("elite", false)) or modifier == "elite_dominant")
 	_running_wave = true
 	wave_started.emit(_next_wave_index + 1)
 	return true
