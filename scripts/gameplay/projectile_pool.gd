@@ -76,6 +76,7 @@ func active_count() -> int:
 	return count
 
 func _resolve_hit(projectile: Dictionary, enemy_manager: Node) -> void:
+	AudioDirector.play_hit(bool(projectile["heavy"]))
 	var splash: float = float(projectile["splash"])
 	if splash > 0.0:
 		enemy_manager.damage_radius(projectile["position"], splash, float(projectile["damage"]), String(projectile["damage_type"]))

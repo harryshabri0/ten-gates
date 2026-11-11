@@ -193,6 +193,7 @@ func tick(delta: float, enemy_manager: PrototypeEnemyManager, projectile_pool: P
 	_attack_target(target, stats, enemy_manager, projectile_pool, status_system)
 
 func _attack_target(target: int, stats: Dictionary, enemy_manager: PrototypeEnemyManager, projectile_pool: PrototypeProjectilePool, status_system: PrototypeStatusSystem) -> void:
+	AudioDirector.play_attack(tower_id)
 	var element_multiplier: float = float(_world_element_damage_multipliers.get(String(definition.get("element", "")), 1.0))
 	var final_damage: float = float(stats["damage"]) * _damage_modifier * _skill_multiplier("tower_damage") * element_multiplier * _enemy_damage_multiplier
 	if tower_id == "archer":
@@ -318,6 +319,9 @@ func _display_color() -> Color:
 	if branch == "B":
 		return base_color.lerp(Color(0.25, 0.75, 1.0), 0.35)
 	return base_color
+
+func get_visual_color() -> Color:
+	return _display_color()
 
 func _draw() -> void:
 	var stats: Dictionary = _current_stats()

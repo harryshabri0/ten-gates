@@ -152,6 +152,22 @@ func active_count() -> int:
 			count += 1
 	return count
 
+func get_visual_enemies(limit: int = 80) -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	for enemy: Dictionary in _enemies:
+		if not enemy["active"]:
+			continue
+		result.append({
+			"position": enemy["position"],
+			"color": enemy["color"],
+			"flying": enemy["flying"],
+			"is_elite": enemy["is_elite"],
+			"is_boss": enemy["is_boss"]
+		})
+		if result.size() >= limit:
+			break
+	return result
+
 func find_target(origin: Vector2, radius: float, target_mode: int = 0, can_target_flying: bool = true, is_anti_air: bool = false) -> int:
 	_grid.query_circle(origin, radius, _query_buffer)
 	var best_index: int = -1

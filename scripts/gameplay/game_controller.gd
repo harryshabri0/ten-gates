@@ -66,6 +66,7 @@ var _stress_test_running: bool = false
 var _is_paused: bool = false
 var _auto_next: bool = false
 var _leak_causes: Dictionary = {}
+var _is_3d_presentation: bool = true
 
 func _ready() -> void:
 	_load_tower_data()
@@ -241,6 +242,7 @@ func _on_build_requested(tower_id: String) -> void:
 		_hud.set_hint("Not enough gold for %s." % tower.tower_name)
 		return
 	add_child(tower)
+	tower.hide()
 	_towers.append(tower)
 	_tower_by_slot[_selected_slot] = tower
 	_slots_occupied[_selected_slot] = 1
@@ -251,6 +253,8 @@ func _on_build_requested(tower_id: String) -> void:
 	_selected_tower = tower
 	tower.set_selected(true)
 	_hud.set_hint("%s built. Undo is available for 3 seconds." % tower.tower_name)
+	AudioDirector.play_build()
+	PlayerStats.record_tower_built()
 	_update_tutorial("built")
 	_refresh_tower_panel()
 	_refresh_hud()
@@ -268,6 +272,7 @@ func _on_upgrade_requested() -> void:
 		_hud.set_hint("Not enough gold for this upgrade.")
 		return
 	if _selected_tower.upgrade():
+		AudioDirector.play_upgrade()
 		GameState.set_gold(GameState.gold - cost)
 		_hud.set_hint("%s upgraded to L%d." % [_selected_tower.tower_name, _selected_tower.level])
 		_refresh_tower_panel()
@@ -303,6 +308,7 @@ func _on_sell_requested() -> void:
 	refund = _selected_tower.get_sell_refund(minf(0.95, float(_difficulty.get("sell_refund", SELL_REFUND_NORMAL)) + _skill_modifiers.flat("sell_refund")))
 	_sell_count += 1
 	GameState.set_gold(GameState.gold + refund)
+	AudioDirector.play_ui()
 	_remove_tower(slot, _selected_tower)
 	_hud.set_hint("Tower sold for %d gold." % refund)
 	_clear_selection()
@@ -420,6 +426,7 @@ func _start_stress_test() -> void:
 	_refresh_hud()
 
 func _on_enemy_defeated(bounty: int) -> void:
+	PlayerStats.record_kill(bounty)
 	if str(_current_level.get("modifier", "")) != "gold_scarce":
 		GameState.set_gold(GameState.gold + roundi(float(bounty) * _gold_rush_multiplier * _skill_modifiers.multiplier("bounty")))
 	_refresh_hud()
@@ -428,6 +435,7 @@ func _on_enemy_spawned(enemy_id: String) -> void:
 	_discover("enemies", enemy_id)
 
 func _on_enemy_damaged(_position: Vector2, _damage: float) -> void:
+	PlayerStats.record_damage(_damage)
 	_feedback.hit_flash()
 
 func _on_boss_telegraph(_position: Vector2, _radius: float, _duration: float, label: String) -> void:
@@ -541,6 +549,7 @@ func _on_world_action_requested() -> void:
 		_hud.set_hint("Bridge lever is cooling down.")
 
 func _on_wave_completed(number: int) -> void:
+	PlayerStats.record_wave_cleared()
 	var coin_bonus: int = 0
 	for tower: PrototypeTower in _towers:
 		coin_bonus += tower.get_wave_gold_bonus()
@@ -731,6 +740,7 @@ func _restore_active_run(snapshot: Dictionary) -> void:
 		tower.set_world_range_multiplier(_world_rules.get_tower_range_multiplier())
 		tower.set_world_element_damage_multipliers(_world_rules.get_element_damage_multipliers())
 		add_child(tower)
+		tower.hide()
 		_towers.append(tower)
 		_tower_by_slot[slot] = tower
 		_slots_occupied[slot] = 1
@@ -761,6 +771,8 @@ func _load_tower_data() -> void:
 		_tower_definitions[String(tower["id"])] = tower
 
 func _draw() -> void:
+	if _is_3d_presentation:
+		return
 	draw_rect(Rect2(0.0, 0.0, 1920.0, 1080.0), Color("#31513b"))
 	for row: int in 6:
 		for column: int in 10:
@@ -794,4 +806,16 @@ func _slot_color(index: int) -> Color:
 		"rune": return Color(0.30, 0.25, 0.55, 0.9)
 		"roadside": return Color(0.38, 0.32, 0.20, 0.9)
 		_: return Color(0.21, 0.42, 0.32, 0.82)
+
+func get_visual_path() -> PackedVector2Array:
+	return _path_points
+
+func get_visual_tower_nodes() -> Array[PrototypeTower]:
+	return _towers
+
+func get_visual_towers() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	for tower: PrototypeTower in _towers:
+		result.append({"position": tower.global_position, "level": tower.level, "color": tower.get_visual_color()})
+	return result
 
